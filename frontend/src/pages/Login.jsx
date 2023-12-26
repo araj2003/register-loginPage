@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import axios from 'axios'
+<<<<<<< HEAD
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
@@ -8,11 +9,16 @@ import { userContext } from '../context/userContext'
 const Login = () => {
   const {isLogin,setIsLogin} = useContext(userContext)
   const navigate = useNavigate()
+=======
+const Login = () => {
+
+>>>>>>> 37076fba4d2c4d10a57b882420f49b6ef6713f1d
   const [data,setData] = useState({
     email:"",
     password:""
   })
 
+<<<<<<< HEAD
   const registerUser = async(e) => {
     e.preventDefault()
     // console.log(data)
@@ -38,6 +44,12 @@ const Login = () => {
     } catch (error) {
       console.log(error)
     }
+=======
+  const registerUser = (e) => {
+    e.preventDefault()
+    console.log(data)
+    axios.get('/')
+>>>>>>> 37076fba4d2c4d10a57b882420f49b6ef6713f1d
   }
 
   return (
