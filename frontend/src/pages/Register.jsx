@@ -1,24 +1,37 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-hot-toast';
+import {useNavigate} from 'react-router-dom'
 const Register = () => {
   // Move the useState inside the component body
+  const navigate = useNavigate()
   const [data, setData] = useState({
     name: "",
     email: "",
     password: ""
   });
 
-  const registerUser = (e) => {
+  const registerUser = async (e) => {
     e.preventDefault();
     // Add logic to handle the form submission
     console.log(data)
     const {name,email,password} = data;
     try {
-      const {data} = axios.post('/register',{
+      const {data} = await axios.post('/register',{
         name,email,password
       })
+      if(data.error){
+        toast.error(data.error,{
+          duration: 6000,
+        })
+      }
+      else{
+        setData({})
+        toast.success('Login Succesful. Welcome!')
+        navigate('/')
+      }
     } catch (error) {
-      
+      console.log(error)
     }
   };
 
