@@ -2,4 +2,33 @@
     border: 2px solid green;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+form .input{
+    display: flex;
+    flex-direction: column;
+    
+}
+form input{
+    width: 19rem;
+    padding: 1rem;
+    background-color: #ECECEC;
+    color: #7E7C7C;
+    border: 1px solid #AFA9A9;
+    border-radius: 0.25rem;
+}
+form button{
+    background-color: #EB5757;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.5rem;
 }
