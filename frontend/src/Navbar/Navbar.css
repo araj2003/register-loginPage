@@ -24,3 +24,13 @@ a {
     color: #EB5757;
     text-decoration: underline;
 }
+@media (max-width: 425px) {
+    nav{
+        display: flex;
+        justify-content: center;
+    }
+    nav ul li a{
+        font-size: 1rem;
+        
+    }
+}
