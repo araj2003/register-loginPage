@@ -3,8 +3,8 @@ import axios from 'axios'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
-import { userContext } from '../context/userContext'
-
+import { userContext } from '../../context/userContext'
+import classes from "./Login.module.css"
 const Login = () => {
   const {isLogin,setIsLogin} = useContext(userContext)
   const navigate = useNavigate()
@@ -41,18 +41,22 @@ const Login = () => {
   }
 
   return (
-    <>
+    <div className={classes.login}>
       <h1>Login</h1>
       <div>
-      <form onSubmit={registerUser}>
+      <form onSubmit={registerUser} className={classes.form}>
+        <div className={classes.input}>
           <label>Email</label>
           <input type="email" placeholder='Enter email' value={data.email} onChange={(e) => setData({ ...data, email: e.target.value })} />
+        </div>
+        <div className={classes.input}>
           <label>Password</label>
           <input type="password" placeholder='Enter password' value={data.password} onChange={(e) => setData({ ...data, password: e.target.value })} />
-          <button type='submit'>Submit</button>
+        </div>
+        <button type='submit'>Submit</button>
         </form>
       </div>
-    </>
+    </div>
   )
 }
 
