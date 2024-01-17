@@ -10,6 +10,7 @@ export function UserContextProvider({ children }) {
   const [user, setUser] = useState(null);
   const [isLogin, setIsLogin] = useState(false);
 
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,8 +30,17 @@ export function UserContextProvider({ children }) {
     }
   }, [isLogin]);
 
+  const logOut = () => {
+    // Clear the authentication token
+    document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    // Update the login state
+    setIsLogin(false);
+    // Reset the user state
+    setUser(null);
+  };
+
   return (
-    <userContext.Provider value={{ user, setUser, isLogin, setIsLogin }}>
+    <userContext.Provider value={{ user, setUser, isLogin, setIsLogin,logOut }}>
       {children}
     </userContext.Provider>
   );

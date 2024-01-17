@@ -1,32 +1,22 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-<<<<<<< HEAD
 import { toast } from 'react-hot-toast';
 import {useNavigate} from 'react-router-dom'
 const Register = () => {
   // Move the useState inside the component body
   const navigate = useNavigate()
-=======
-const Register = () => {
-  // Move the useState inside the component body
->>>>>>> 37076fba4d2c4d10a57b882420f49b6ef6713f1d
   const [data, setData] = useState({
     name: "",
     email: "",
     password: ""
   });
 
-<<<<<<< HEAD
   const registerUser = async (e) => {
-=======
-  const registerUser = (e) => {
->>>>>>> 37076fba4d2c4d10a57b882420f49b6ef6713f1d
     e.preventDefault();
     // Add logic to handle the form submission
     console.log(data)
     const {name,email,password} = data;
     try {
-<<<<<<< HEAD
       const {data} = await axios.post('/register',{
         name,email,password
       })
@@ -42,13 +32,6 @@ const Register = () => {
       }
     } catch (error) {
       console.log(error)
-=======
-      const {data} = axios.post('/register',{
-        name,email,password
-      })
-    } catch (error) {
-      
->>>>>>> 37076fba4d2c4d10a57b882420f49b6ef6713f1d
     }
   };
 

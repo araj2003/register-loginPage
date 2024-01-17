@@ -1,11 +1,11 @@
 const userModal = require('../modal/user');
-<<<<<<< HEAD
+
 require('dotenv').config()
 const {comparePassword, hashPassword} = require('../helper/auth')
 const jwt = require('jsonwebtoken')
-=======
 
->>>>>>> 37076fba4d2c4d10a57b882420f49b6ef6713f1d
+
+
 const test = (req, res) => {
   res.status(200).json("test successful");
 };
@@ -35,29 +35,25 @@ const register = async (req, res) => {
       });
     }
 
-<<<<<<< HEAD
+
     const newPassword = await hashPassword(password)
 
     const user = await userModal.create({
       name,
       email,
       password:newPassword,
-=======
-    const user = await userModal.create({
-      name,
-      email,
-      password,
->>>>>>> 37076fba4d2c4d10a57b882420f49b6ef6713f1d
-    });
+    })
 
-    return res.json(user);
+    
+
+    return res.json(user)
   } catch (error) {
     console.log(error);
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
 
-<<<<<<< HEAD
+
 const login = async (req,res) => {
   try {
     const {email,password} = req.body
@@ -103,6 +99,5 @@ const profile = (req,res) => {
 }
 
 module.exports = { test, register,login,profile };
-=======
-module.exports = { test, register };
->>>>>>> 37076fba4d2c4d10a57b882420f49b6ef6713f1d
+
+
