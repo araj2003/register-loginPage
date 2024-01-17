@@ -3,7 +3,8 @@ import axios from 'axios'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
-import { userContext } from '../context/userContext'
+import { userContext } from '../../context/userContext'
+import classes from "./Login.module.css"
 
 const Login = () => {
   const {isLogin,setIsLogin} = useContext(userContext)
@@ -41,7 +42,7 @@ const Login = () => {
   }
 
   return (
-    <>
+    <div className={classes.login}>
       <h1>Login</h1>
       <div>
       <form onSubmit={registerUser}>
@@ -52,7 +53,7 @@ const Login = () => {
           <button type='submit'>Submit</button>
         </form>
       </div>
-    </>
+    </div>
   )
 }
 
